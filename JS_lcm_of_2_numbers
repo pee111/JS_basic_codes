@@ -1,3 +1,4 @@
+// function to calculate of least common multiple
 function lcm(n1, n2) {
 let par1;
 let par2;
