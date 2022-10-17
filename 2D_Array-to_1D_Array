@@ -1,0 +1,10 @@
+// funcion to flatten of a 2D or any multi array
+function flat(Array) {
+var newArr = [];
+for(var i = 0; i < Array.length; i++)
+{
+    newArr = newArr.concat(Array[i]);
+}
+
+return newArr;
+}
