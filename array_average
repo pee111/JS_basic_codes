@@ -1,0 +1,8 @@
+// function to calculate of math. average of all elements in 1 array
+function mean(Array) {
+let s = 0;
+for (let i = 0; i < Array.length; i++) {
+s = s + Array[i] / Array.length;
+}
+return s;
+}
