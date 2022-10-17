@@ -1,0 +1,13 @@
+// funtion to calculate of greatest common divisor 
+function gcd(a,b)
+  {
+   var r;
+   do
+    {
+      r = a % b;
+      a=b;
+      b=r;
+    }
+   while (r>0);
+   return a;
+  }
