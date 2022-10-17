@@ -1,0 +1,13 @@
+function sum(multiArray) {
+  var sol = 0;
+  for(var outerLoop=0; outerLoop < multiArray.length; outerLoop++){
+    if(multiArray[outerLoop].constructor === Array){
+      for(var innerLoop=0; innerLoop < multiArray[outerLoop].length; innerLoop++){
+        sol += multiArray[outerLoop][innerLoop];
+      }
+    } else {
+      sol += MultiArray[outerLoop];
+    }
+  }
+  return sol;
+}
