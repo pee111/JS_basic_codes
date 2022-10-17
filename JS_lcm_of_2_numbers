@@ -1,0 +1,11 @@
+function lcm(n1, n2) {
+let par1;
+let par2;
+let k = 0;
+do {
+  k++;
+  par1 = k % n1;
+  par2= k % n2;
+} while (par1 !== 0 || par2 !== 0);
+return k;
+}
