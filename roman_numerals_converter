@@ -1,0 +1,21 @@
+function roman2decimal(roman) {
+    var roman = ('' + roman).toUpperCase();
+    var dec = 0;
+    var length = roman.length;
+    var letters = 'IVXLCDM';
+    var values = new Array(1, 5, 10, 50, 100, 500, 1000);
+    for (var i = 0; i < length; i++)
+    {
+      var l = roman.substr(i, 1);
+      var posl = letters.indexOf(l);
+      if (i != (length - 1))
+      {
+        var lA = roman.substr((i+1), 1);
+        var poslA = letters.indexOf(lA);
+      }
+      else  { poslA = 0; } 
+      if (posl >= poslA)  { dec += values[posl] }
+      else if (posl < poslA)  { dec = dec - values[posl] + values[poslA]; i++; } 
+    }
+    return dec;
+  }
