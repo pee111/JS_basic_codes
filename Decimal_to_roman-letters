@@ -1,0 +1,35 @@
+function decim2romans(dec) {
+    var dec = '' + dec; 
+    while (dec.substr(0, 1) == '0')  { dec = dec.substring(1, length); } 
+    var num = parseInt(dec);
+    var thousand = 0;
+    while (num > 1000)  { num -= 1000; thousand++; }
+    dec = num + ''; 
+    var rN = ''; 
+    var length = dec.length;
+    var adds = new Array('I', 'X', 'C', 'M');
+    var noAdds = new Array('V', 'L', 'D');
+
+    for (var i = 0; i < length; i++)
+    {
+      var d = dec.substr(i, 1);
+      var pos = length - 1 - i;
+      if (d == 0)  { continue; }
+      else if ( (d == 1) || (d == 2) || (d == 3) )
+      {
+        for (var j = 0; j < d; j++)  { rN += adds[pos]; }
+      }
+      else if (d == 4)  { rN += adds[pos] + noAdds[pos]; }
+      else if (d == 5)  { rN += noAdds[pos]; }
+      else if ( (d == 6) || (d == 7) || (d == 8) )
+      {
+        rN += noAdds[pos];
+        for (var k = 5; k < d; k++)  { rN += adds[pos]; }
+      }
+      else if (d == 9)  { rN += adds[pos] + adds[pos + 1]; }
+    }
+
+    for (var m = 0; m < thousand; m++)  { rN = 'M' + rN; }
+
+ return rN;
+  }
